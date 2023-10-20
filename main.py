@@ -1,8 +1,12 @@
 import requests
+from urllib3.exceptions import InsecureRequestWarning
+from urllib3 import disable_warnings
 import json
 import os
 
-requests.packages.urllib3.disable_warnings()
+# requests.packages.urllib3.disable_warnings()
+disable_warnings(InsecureRequestWarning)
+
 SCKEY = os.environ.get('SCKEY')
 TG_BOT_TOKEN = os.environ.get('TGBOT')
 TG_USER_ID = os.environ.get('TGUSERID')
